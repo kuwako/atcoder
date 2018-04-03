@@ -13,7 +13,6 @@ object TravelingPlan extends App {
       total += abs(A(i) - A(i - 1))
   }
 
-  // 端折る箇所がi-1 i+1の間だった場合は全経路いった場合と同じ、違った場合はi と i-1の絶対値の2倍の額を合計から引く
   for (i <- 1 to n) {
     val before = A(i - 1)
     val after = A(i + 1)
