@@ -1,6 +1,3 @@
-/**
-  * Created by mkuwako on 18/04/03.
-  */
 object Chocolate extends App {
   val sc = new java.util.Scanner(System.in)
   val n = sc.nextInt

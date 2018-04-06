@@ -1,8 +1,5 @@
 package atcoder092
 
-/**
-  * Created by mkuwako on 18/04/03.
-  */
 object GridComponents extends App {
   val sc = new java.util.Scanner(System.in)
   val A = sc.nextInt

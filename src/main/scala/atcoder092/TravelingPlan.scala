@@ -1,6 +1,3 @@
-/**
-  * Created by mkuwako on 18/04/03.
-  */
 object TravelingPlan extends App {
   import scala.math.abs
   val sc = new java.util.Scanner(System.in)
