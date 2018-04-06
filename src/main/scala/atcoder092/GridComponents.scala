@@ -10,37 +10,28 @@ object GridComponents extends App {
   // どんなA, Bがきても、100 x 100 のマスを考える
   println("100 100")
 
-  // 上半分の100 x 50は白 = .
-  for(h <- 1 to 50) {
-    if (h % 2 == 0 | b == 0) {
-      println("." * 100)
-    } else {
-      for(w <- 1 to 100) {
-        if (w % 2 == 1 && b > 0) {
-          print("#")
-          b -= 1
-        } else {
-          print(".")
+  printLines(".", "#", b)
+  printLines("#", ".", a)
+
+  // 半分の100 x 50はmanStr
+  // そこにcntの数だけ、subStrを埋める。ここで、偶数行の偶数列目だけに埋めてcntをデクリメントする
+  // 偶数行の奇数列目だけを埋めることで、自陣をかならず1つのmainStrの連結成分とする
+  def printLines(mainStr :String, subStr :String, c :Int) :Unit = {
+    var cnt = c
+    for(h <- 1 to 50) {
+      if (h % 2 == 1 | cnt == 0) {
+        println(mainStr * 100)
+      } else {
+        for(w <- 1 to 100) {
+          if (w % 2 == 0 && cnt > 0) {
+            print(subStr)
+            cnt -= 1
+          } else {
+            print(mainStr)
+          }
         }
+        println()
       }
-      println()
-    }
-  }
-  println("#" * 100)
-  // 下半分の100 x 50は黒 = #
-  for(h <- 1 to 49) {
-    if (h % 2 == 0 | a == 0) {
-      println("#" * 100)
-    } else {
-      for(w <- 1 to 100) {
-        if (w % 2 == 1 && a > 0) {
-          print(".")
-          a -= 1
-        } else {
-          print("#")
-        }
-      }
-      println()
     }
   }
  }
