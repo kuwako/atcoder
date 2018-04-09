@@ -6,12 +6,12 @@ object WorstCase extends App {
 
   // int型でいけるか微妙?
   for (i <- 0 until Q) {
-    val a = sc.nextLong
-    val b = sc.nextLong
+    val a = sc.nextInt
+    val b = sc.nextInt
     val m = a * b
-    val s :Long = (Math.sqrt(a * b)).toLong
+    val s :Int = (Math.sqrt(a * b)).toInt
 
-    var ans :Long = 2 * s - 1
+    var ans :Int = 2 * s - 1
 
     if (s * (s + 1) >= m) {
       ans -= 1

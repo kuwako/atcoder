@@ -14,7 +14,7 @@ object SmallAndLargeIntegers extends App {
   }
 
   // B-KからBまで出力(ただし、A+K以上である必要がある)
-  for (j <- B-K to B) {
+  for (j <- B - K to B) {
     if (j > A + K) {
       println(j)
     }
