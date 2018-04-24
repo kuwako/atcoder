@@ -1,9 +1,12 @@
+import scala.annotation.tailrec
+
 object Beam extends App {
   val H, W = MyPredef.nextInt
   val mirror = Array.fill(H)(MyPredef.next)
   // 進む方向
   var dire = "r" // right, left, up, down
 
+  @tailrec
   def calc(dire: String, ans: Int, x: Int, y: Int): Int = {
     if (x >= W | y >= H | x < 0 | y < 0) ans
     else {
