@@ -1,49 +1,52 @@
 package arc096
 
+import scala.annotation.tailrec
+
 object StaticSushi extends App {
-  val N, C = MyPredef.nextInt
-  val sushi = Array.fill(N, 2)(MyPredef.nextInt)
-  var rMax = 0
-  var lMax = 0
+  val N = MyPredef2.nextInt // 寿司の数
+  val C = MyPredef2.nextLong // 外周
+  val inputSushi :Array[Array[Long]] = Array.fill(N, 2)(MyPredef2.nextLong) // 距離, calの配列
 
-  var sum = 0
-  var pos = 0
-  var ind = 0
-  // 時計回り
-  for (i <- 0 until N) {
-    val tCal = sushi(i)(1)
-    val tPos = sushi(i)(0)
-    sum += tCal
-    if (rMax < sum - tPos) {
-      rMax = sum - tPos
-      pos = tPos
-      ind = i
+  @tailrec
+  def makeSushiArray(ind :Int, sumCal: Long, maxCal: Long, sushi :Array[Array[Long]] ,res :Array[Sushi]): Array[Sushi] = {
+    val target = sushi(ind)
+    val tCal = sumCal + target(1) - target(0)
+    var tMaxCal = maxCal
+    if (maxCal < tCal) {
+      tMaxCal = tCal
+    }
+    val tSushi = new Sushi(target(0), tMaxCal)
+
+    if (ind < N - 1) {
+      makeSushiArray(ind + 1, tCal + target(0), tMaxCal, sushi, res :+ tSushi)
+    } else {
+      res :+ tSushi
     }
   }
+  val rSushi :Array[Sushi] = makeSushiArray(0, 0, 0, inputSushi, Array.empty[Sushi])
+  val reverseSushi = inputSushi.reverse.map(x => Array(C - x(0), x(1)))
+  val lSushi :Array[Sushi] = makeSushiArray(0,0,0,reverseSushi, Array.empty[Sushi])
 
-  sum = rMax - pos
-  println(sum, rMax, pos)
-  for (i <- N - 1 to ind + 1 by -1) {
-    val tCal = sushi(i)(1)
-    val tPos = C - sushi(i)(0)
-    if (rMax < sum - tPos) {
-      rMax = sum - tPos
-    }
-
-    sum += tCal
+  var rMax :Long = rSushi.maxBy(_.maxCal).maxCal
+  for (i <- 0 until N - 1) {
+    val tMax = rSushi(i).maxCal - rSushi(i).dist + lSushi(N - 2 - i).maxCal
+    if (tMax > rMax) rMax = tMax
   }
 
-
-  sum = 0
-  pos = 0
-  ind = N - 1
-  // 反時計回り
+  var lMax :Long = lSushi.maxBy(_.maxCal).maxCal
+  for (i <- 0 until N - 1) {
+    val tMax = lSushi(i).maxCal - lSushi(i).dist + rSushi(N - 2 - i).maxCal
+    if (tMax > lMax) lMax = tMax
+  }
 
   if (rMax > lMax) println(rMax)
   else println(lMax)
 }
 
-object MyPredef {
+// 始点からの距離と、その時点での最大カロリーを持つ
+case class Sushi(dist: Long, maxCal: Long) {}
+
+object MyPredef2 {
   @inline def rep(n: Int, f: => Unit): Unit = { var c = 0; while (c < n) { f; c += 1 } }
   @inline def rep(n: Int, f: Int => Unit): Unit = { var c = 0; while (c < n) { f(c); c += 1 } }
 
