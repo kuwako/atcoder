@@ -1,3 +1,5 @@
+package pz
+
 object dogcat extends App {
   val start = System.currentTimeMillis
   val ct1 = System.currentTimeMillis

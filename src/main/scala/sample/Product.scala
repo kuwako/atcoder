@@ -1,3 +1,5 @@
+package sample
+
 object Product extends App {
   val line = scala.io.StdIn.readLine()
   val num1 = line.split(" ")(0).toInt

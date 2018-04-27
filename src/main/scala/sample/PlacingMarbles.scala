@@ -1,3 +1,5 @@
+package sample
+
 object PlacingMarbles extends App{
   val line = scala.io.StdIn.readLine()
 

@@ -1,3 +1,5 @@
+package pz
+
 import scala.annotation.tailrec
 
 object Beam extends App {

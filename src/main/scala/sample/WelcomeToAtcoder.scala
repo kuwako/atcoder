@@ -1,3 +1,5 @@
+package sample
+
 object WelcomeToAtcoder extends App {
   var a = readInt
   var num = readLine

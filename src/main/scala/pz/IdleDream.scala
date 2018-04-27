@@ -1,3 +1,5 @@
+package pz
+
 object IdleDream extends App {
   val N, M = MyPredef.nextInt
   val users = List.fill(M, N)(MyPredef.nextInt)

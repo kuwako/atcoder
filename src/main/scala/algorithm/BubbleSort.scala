@@ -1,3 +1,5 @@
+package algorithm
+
 object BubbleSort extends App {
   val N = readInt
   var A = readLine.split(" ").map(_.toInt)

@@ -1,3 +1,5 @@
+package pz
+
 object Leet extends App {
   val line = io.StdIn.readLine
   val ans = line.map(x => {
