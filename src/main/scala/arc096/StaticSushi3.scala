@@ -44,7 +44,7 @@ object StaticSushi3 extends App {
 }
 
 // 始点からの距離と、その時点での最大カロリーを持つ
-case class Sushi(dist: Long, maxCal: Long) {}
+case class Sushi3(dist: Long, maxCal: Long) {}
 
 object MyPredef3 {
   @inline def rep(n: Int, f: => Unit): Unit = { var c = 0; while (c < n) { f; c += 1 } }
