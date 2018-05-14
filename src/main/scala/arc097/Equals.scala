@@ -60,7 +60,7 @@ class UnionFind(v: Int){
 
     // ra を大きなグループにしたいので、逆であれば入れ替える
     if(uni(ra) > uni(rb)) {  // rbの方が要素数が多ければ
-      var tmp = ra
+      val tmp = ra
       ra = rb
       rb = tmp
     }
@@ -68,6 +68,10 @@ class UnionFind(v: Int){
     // ra と rb を結合し、rb の親を ra とする
     uni(ra) += uni(rb)
     uni(rb) = ra
+    println(a, b)
+    println(ra, rb)
+    println(uni(ra), uni(rb))
+    println(uni.toList)
     return true
   }
 
