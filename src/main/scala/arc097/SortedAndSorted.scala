@@ -9,6 +9,8 @@ object SortedAndSorted extends App {
     arr :+= node
   })
 
+  // 転倒数を計算
+  // 動的計画法を使うっぽい
   var ans = 0
   for (i <- 1 to N) {
     // TODO scalaで配列の位置入れ替えの方法がわからん...
