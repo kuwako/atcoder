@@ -6,19 +6,14 @@ object LISDL extends App {
   val X = N - A - B
 
   // A + B > N + 1 のとき実現不可能
-  if ((A + B) > (N + 1)) {
-    println(-1)
-    sys.exit
-  }
-
-  // X = N - A - B で A, BのどちらかがXより小さいと不可能
-  if (X > A | X > B) {
+  if ((A + B) > (N + 1) | N > A * B) {
     println(-1)
     sys.exit
   }
 
   // それ以外のとき、実現可能
   var arr = Array.emptyIntArray
+
   if (B != N) {
     for (i <- 1 to A) arr :+= i
   }
