@@ -20,7 +20,7 @@ void bfs(int s)
         u = q.front(); q.pop();
         for (int i = 0; i < n; ++i)
         {
-            if (M[u][v] == o) continue;
+            if (M[u][v] == 0) continue;
             if (d[v] != INFTY) continue;
             d[v] = d[u] + 1;
             q.push(v);
