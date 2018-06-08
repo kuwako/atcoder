@@ -13,11 +13,13 @@ int main() {
 
 	int pl = 0, pr = 0;
 
+    printf("%d %d %lld\n", pr, pl, ans);
 	for (int i = 0; i < N; i++) {
 		while (pr != N && X[pr] - X[i] <= D) pr++;
 		while (pl != N && X[i] - X[pl] > D) pl++;
 
 		ans -= 1LL * (pr - i - 1) * (pr - i - 2 + pl * 2) / 2 + 1LL * (N - pr) * i;
+        printf("%d %d %lld\n", pr, pl, ans);
 	}
 	cout << ans << '\n';
 	return 0;
