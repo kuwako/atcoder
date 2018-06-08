@@ -19,7 +19,7 @@ int main() {
 		while (pl != N && X[i] - X[pl] > D) pl++;
 
 		ans -= 1LL * (pr - i - 1) * (pr - i - 2 + pl * 2) / 2 + 1LL * (N - pr) * i;
-        printf("%d %d %lld\n", pr, pl, ans);
+		printf("%d %d %d %lld\n", i, pr, pl, ans);
 	}
 	cout << ans << '\n';
 	return 0;
