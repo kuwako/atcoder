@@ -16,7 +16,7 @@ void dfs(int r, int c)
     color[r] = c;
     while (!S.empty()) {
         int u = S.top(); S.pop();
-        for (int i = 0; i < G[u]).size(); i++) {
+        for (int i = 0; i < G[u].size(); i++) {
             int v = G[u][i];
             if (color[v] == NIL) {
                 color[v] = c;
