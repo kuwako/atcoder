@@ -24,7 +24,6 @@ void dfs(int r, int c)
             }
         }
     }
-
 }
 
 void assignColor()
@@ -34,7 +33,6 @@ void assignColor()
     for (int u=0; u<n; u++) {
         if (color[u] == NIL) dfs(u, id++);
     }
-
 }
 
 int main()
