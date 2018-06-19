@@ -49,6 +49,7 @@ void dijkstra()
 
 int main()
 {
+    // TODO 入力部分
     dijkstra();
     return 0;
 }
