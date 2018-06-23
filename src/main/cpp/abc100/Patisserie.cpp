@@ -19,10 +19,21 @@ int main()
         for (long long j = 1; j <= n; j++) {
             long long s = 0;
             for (long long k = 1; k <= 3; k++) {
-                
+                if( ( i & (1 << (k-1) ) ) > 0) {
+                    s += c[j][k];
+                } else {
+                    s -= c[j][k];
+                }
             }
+            vec.push_back(s);
         }
+        sort(vec.begin(),vec.end());
+		long long a=0;
+		for(long long i=1;i<=m;i++)
+			a+=vec[vec.size()-i];
+		ans=max(ans,a);
     }
+    printf("%lld",ans);
 
 	return 0;
 }
