@@ -15,10 +15,14 @@ int main()
     }
 
     for (int i = 0; i < 8; i++) {
+        // TODO
         vector <long long> vec;
         for (long long j = 1; j <= n; j++) {
             long long s = 0;
             for (long long k = 1; k <= 3; k++) {
+                // TODO and演算子の意味と << の意味
+                // & はbit単位のAND
+                // << は bitを左にシフト
                 if( ( i & (1 << (k-1) ) ) > 0) {
                     s += c[j][k];
                 } else {
@@ -28,10 +32,10 @@ int main()
             vec.push_back(s);
         }
         sort(vec.begin(),vec.end());
-		long long a=0;
-		for(long long i=1;i<=m;i++)
-			a+=vec[vec.size()-i];
-		ans=max(ans,a);
+		long long a = 0;
+		for(long long i = 1; i <= m; i++)
+			a += vec[vec.size() - i];
+		ans = max(ans,a);
     }
     printf("%lld",ans);
 
