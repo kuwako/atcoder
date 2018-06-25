@@ -5,7 +5,7 @@ using namespace std;
 #define MAXN 1000
 long long n, m, ans, c[MAXN+5][5];
 
-// https://beta.atcoder.jp/contests/abc100/submissions/2709453
+// 参考: https://beta.atcoder.jp/contests/abc100/submissions/2709453
 int main()
 {
     scanf("%lld %lld", &n, &m);
@@ -15,14 +15,20 @@ int main()
     }
 
     for (int i = 0; i < 8; i++) {
-        // TODO
         vector <long long> vec;
         for (long long j = 1; j <= n; j++) {
             long long s = 0;
-            for (long long k = 1; k <= 3; k++) {
-                // TODO and演算子の意味と << の意味
+            for (int k = 1; k <= 3; k++) {
                 // & はbit単位のAND
                 // << は bitを左にシフト
+                printf("%d %lld %d %d %d\n", i, j, k, 1 << (k - 1), i & i << (k - 1));
+                FILE *fp;
+                fp = fopen ("filename.txt","w");
+                if (fp!=NULL)
+                {
+                    fprintf(fp,"Some String\n");
+                    fclose (fp);
+                }
                 if( ( i & (1 << (k-1) ) ) > 0) {
                     s += c[j][k];
                 } else {
