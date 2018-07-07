@@ -14,10 +14,17 @@ int main() {
     long long p[5]={0,0,0,0,0},mmin=0x7fffffff;
     int l=1,r=3;
     for(int i=2;i<n-1;i++){
-        while (l<i&&abs(k[l]-k[0]-(k[i]-k[l]))>=abs(k[l+1]-k[0]-(k[i]-k[l+1]))) {
+        while (
+            l<i
+            && abs(k[l]-k[0]-(k[i]-k[l]))
+                >= abs(k[l+1]-k[0]-(k[i]-k[l+1]))
+        ) {
             l++;
         }
-        while (r<n&&abs(k[r]-k[i]-(k[n]-k[r]))>=abs(k[r+1]-k[i]-(k[n]-k[r+1]))) {
+        while (
+            r<n
+            && abs(k[r]-k[i]-(k[n]-k[r]))
+                >= abs(k[r+1]-k[i]-(k[n]-k[r+1]))) {
             r++;
         }
         p[1]=k[l]-k[0];
