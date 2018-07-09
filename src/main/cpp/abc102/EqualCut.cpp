@@ -31,7 +31,8 @@ int main() {
         p[2]=k[i]-k[l];
         p[3]=k[r]-k[i];
         p[4]=k[n]-k[r];
-        mmin=min(mmin,max(p[1],max(p[2], max(p[3],p[4])))-min(p[1], min(p[2], min(p[3], p[4]))));
+        mmin=min(mmin,
+            max(p[1], max(p[2], max(p[3], p[4]))) - min(p[1], min(p[2], min(p[3], p[4]))));
     }
     printf("%lld\n",mmin);
     return 0;
