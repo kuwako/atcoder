@@ -60,10 +60,75 @@ void find(int v, int sx, int tx, int sy, int ty, int depth, vector<Point> &ans) 
         ans.push_back(P[T[v].location]);
     }
 
-    // TODO 
+    if (depth % 2 == 0) {
+        if(T[v].l != NIL) {
+            if (sx <= x) find(T[v].l, sx, tx, sy, ty, depth + 1, ans);
+        }
+
+        if(T[v].r != NIL) {
+            if (x <= tx) find(T[v].r, sx, tx, sy, ty, depth + 1, ans);
+        }
+    } else {
+        if(T[v].l != NIL) {
+            if (sy <= y) find(T[v].l, sx, tx, sy, ty, depth + 1, ans);
+        }
+
+        if(T[v].r != NIL) {
+            if (y <= ty) find(T[v].r, sx, tx, sy, ty, depth + 1, ans);
+        }
+    }
 }
 
 int main()
 {
+    int x, y;
+    scanf("%d", &N);
+    for (int i = 0; i < N i++) {
+        scanf("%d %d", &x, &y);
+        p[i] = Point(i, x, y);
+        T[i].l = T[i].r = t[i].p = NIL;
+    }
+    np = 0;
+
+    int root = makeKDTree(0, N, 0);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return 0;
 }
