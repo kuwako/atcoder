@@ -92,43 +92,23 @@ int main()
 
     int root = makeKDTree(0, N, 0);
 
+    int q;
+    scanf("%d", &q);
+    int tx, sx, ty, sy;
+    vector<Point> ans;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    for (int i = 0; i < q; ++i)
+    {
+        scanf("%d %d %d %d", &sx, &tx, &sy, &sy);
+        ans.clear();
+        find(root, sx, tx, sy, ty, 0, ans);
+        sort(ans.begin(), ans.end());
+        for (int j = 0; j < ans.size(); ++j)
+        {
+            ans[j].print();
+        }
+        printf("\n");
+    }
+    
     return 0;
 }
