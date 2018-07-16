@@ -8,7 +8,7 @@ class Node {
         int location;
         int p, l, r;
         Node() {}
-}
+};
 
 class Point {
     public:
@@ -22,7 +22,7 @@ class Point {
         void print() {
             printf("%d\n", id);
         }
-}
+};
 
 static const int MAX = 1000000;
 static const int NIL = -1;
@@ -83,10 +83,10 @@ int main()
 {
     int x, y;
     scanf("%d", &N);
-    for (int i = 0; i < N i++) {
+    for (int i = 0; i < N; i++) {
         scanf("%d %d", &x, &y);
-        p[i] = Point(i, x, y);
-        T[i].l = T[i].r = t[i].p = NIL;
+        P[i] = Point(i, x, y);
+        T[i].l = T[i].r = T[i].p = NIL;
     }
     np = 0;
 
